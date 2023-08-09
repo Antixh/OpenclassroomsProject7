@@ -4,3 +4,6 @@
 
 /* Composants */
 @import "../../components/Header/_Header.css";
+
+/* Pages */
+@import "../../pages/Error/Error.css";

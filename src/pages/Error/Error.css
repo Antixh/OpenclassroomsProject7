@@ -1,0 +1,23 @@
+.Error {
+  margin: auto;
+  margin-top: 100px;
+  width: fit-content;
+  text-align: center;
+  color: var(--primary-color);
+
+  & span {
+    font-size: 288px;
+    font-weight: 700;
+  }
+
+  & p {
+    font-size: 36px;
+    margin-bottom: 150px;
+  }
+
+  & a {
+    font-size: 18px;
+    text-decoration: underline;
+    color: var(--primary-color);
+  }
+}
