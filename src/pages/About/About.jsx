@@ -1,6 +1,12 @@
+import AboutBanner from "../../components/AboutBanner/AboutBanner";
+import Carrousel from "../../components/Carrousel/Carrousel";
+
 function About() {
   return (
-    <h1>À propos</h1>
+    <main>
+      <AboutBanner />
+      <Carrousel />
+    </main>
   )
 }
 

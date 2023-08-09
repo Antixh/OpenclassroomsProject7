@@ -3,9 +3,11 @@
 @import "./Base/variables.css";
 
 /* Components */
+@import "../../components/AboutBanner/_AboutBanner.css";
+@import "../../components/Banner/_Banner.css";
+@import "../../components/Carrousel/_Carrousel.css";
 @import "../../components/Header/_Header.css";
 @import "../../components/Footer/_Footer.css";
-@import "../../components/Banner/_Banner.css";
 @import "../../components/RentList/_RentList.css";
 
 /* Pages */

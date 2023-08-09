@@ -1,0 +1,7 @@
+.carrousel {
+  width: 1020px;
+  height: 48px;
+  margin: auto;
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+}

@@ -1,5 +1,5 @@
 import rentList from "../../data/logements.json";
-console.log(rentList);
+import { Link } from "react-router-dom";
 
 function RentList() {
   return (
@@ -7,10 +7,12 @@ function RentList() {
       {
         rentList.map((logement) => {
           return (
-            <article key={ logement.id } className="rentListCard">
-              <img className="rentListImg" src={ logement.cover } alt={ logement.title } />
-              <p className="rentListTitle">{ logement.title }</p>
-            </article>
+            <Link to={`/logement/${logement.id}`}>
+              <article key={ logement.id } className="rentListCard">
+                <img className="rentListImg" src={ logement.cover } alt={ logement.title } />
+                <p className="rentListTitle">{ logement.title }</p>
+              </article>
+            </Link>
           )
         })
       }
