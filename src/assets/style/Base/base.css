@@ -3,6 +3,10 @@
 }
 
 body {
+  margin: 0;
+}
+
+header, main {
   max-width: 1240px;
   margin: auto;
 }

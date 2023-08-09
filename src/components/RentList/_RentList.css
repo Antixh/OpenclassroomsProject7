@@ -1,0 +1,50 @@
+.rentList {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 55px 50px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: var(--tertiary-color);
+  width: auto;
+  height: fit-content;
+  border-radius: 25px;
+  gap: 50px;
+
+  &::after {
+    content: "";
+    width: 320px;
+  }
+}
+
+.rentListCard {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  height: 320px;
+}
+
+.rentListImg {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+  transition: all 0.1s ease-out;
+
+  &:hover {
+    filter: brightness(0.7);
+    cursor: pointer;
+  }
+}
+
+.rentListTitle {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  z-index: 1;
+  color: var(--secondary-color);
+  font-size: 18px;
+  font-weight: 500;
+  max-width: 280px;
+}

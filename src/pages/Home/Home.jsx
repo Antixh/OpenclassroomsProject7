@@ -1,6 +1,12 @@
+import Banner from "../../components/Banner/Banner";
+import RentList from "../../components/RentList/RentList";
+
 function Home() {
   return (
-    <h1>Accueil</h1>
+    <main>
+      <Banner />
+      <RentList />
+    </main>
   )
 }
 

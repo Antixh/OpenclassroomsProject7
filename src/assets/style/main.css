@@ -2,8 +2,11 @@
 @import "./Base/base.css";
 @import "./Base/variables.css";
 
-/* Composants */
+/* Components */
 @import "../../components/Header/_Header.css";
+@import "../../components/Footer/_Footer.css";
+@import "../../components/Banner/_Banner.css";
+@import "../../components/RentList/_RentList.css";
 
 /* Pages */
-@import "../../pages/Error/Error.css";
+@import "../../pages/Error/_Error.css";

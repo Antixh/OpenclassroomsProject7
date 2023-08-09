@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from './components/Header/Header';
+import Footer from "./components/Footer/Footer";
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Error from './pages/Error/Error';
@@ -15,6 +16,7 @@ function App() {
           <Route path="*" element={<Error />} />
         </Routes>
       </Router>
+      <Footer />
     </div>
   );
 }
