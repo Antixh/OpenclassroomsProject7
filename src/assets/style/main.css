@@ -5,10 +5,13 @@
 /* Components */
 @import "../../components/AboutBanner/_AboutBanner.css";
 @import "../../components/Banner/_Banner.css";
-@import "../../components/Carrousel/_Carrousel.css";
+@import "../../components/Carrousel/_Carousel.css";
 @import "../../components/Header/_Header.css";
 @import "../../components/Footer/_Footer.css";
 @import "../../components/RentList/_RentList.css";
+@import "../../components/Dropdown/_Dropdown.css";
 
 /* Pages */
 @import "../../pages/Error/_Error.css";
+@import "../../pages/FicheLogement/_FicheLogement.css";
+@import "../../pages/About/_About.css";

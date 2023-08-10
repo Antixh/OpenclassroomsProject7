@@ -7,8 +7,8 @@ function RentList() {
       {
         rentList.map((logement) => {
           return (
-            <Link to={`/logement/${logement.id}`}>
-              <article key={ logement.id } className="rentListCard">
+            <Link key={ logement.id } to={`/logement/${logement.id}`}>
+              <article className="rentListCard">
                 <img className="rentListImg" src={ logement.cover } alt={ logement.title } />
                 <p className="rentListTitle">{ logement.title }</p>
               </article>
