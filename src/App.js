@@ -9,8 +9,8 @@ import Error from './pages/Error/Error';
 function App() {
   return (
     <div>
-      <Header />
       <Router>
+      <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

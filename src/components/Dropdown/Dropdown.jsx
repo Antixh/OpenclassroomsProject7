@@ -13,7 +13,7 @@ function Dropdown({title, content}) {
           isOpen ? <img className="chevronUp chevron" src={ chevron } alt="chevron" /> : <img className="chevronDown chevron" src={ chevron } alt="chevron" />
         }
       </div>
-      { isOpen && <div className="dropdownContent">{ content }</div>}
+      { isOpen && <div className={ isOpen ? "dropdownContent" : ""}>{ content }</div>}
     </div>
   )
 }
