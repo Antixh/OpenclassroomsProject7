@@ -62,3 +62,22 @@
   font-weight: 500;
   max-width: 280px;
 }
+
+@media ( max-width: 829px ) {
+  .rentList {
+    justify-content: center;
+  }
+}
+
+@media ( max-width: 600px ) {
+  .rentList {
+    padding: 0;
+    margin-top: 20px;
+    gap: 20px;
+    background-color: var(--secondary-color);
+  }
+
+  .rentListCard {
+    height: 255px;
+  }
+}

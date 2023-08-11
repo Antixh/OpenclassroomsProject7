@@ -31,3 +31,24 @@ header {
     }
   }
 }
+
+@media ( max-width: 600px ) {
+  header {
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    & img {
+      height: 46px;
+    }
+
+    & nav {
+      font-size: 12px;
+      justify-content: flex-end;
+
+      & a {
+        margin-left: 15px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}

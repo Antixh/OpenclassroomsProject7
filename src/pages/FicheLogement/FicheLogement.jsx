@@ -19,27 +19,29 @@ function FicheLogement() {
   return (
     <main>
       <Carousel slides={ ficheLogement.pictures }/>
-      <section className="ficheLogeHeaderWrapper">
-        <div className="ficheLogeHeaderTitle">
-          <h1>{ ficheLogement.title }</h1>
-          <h2>{ ficheLogement.location }</h2>
+      <section className="ficheLogeInfosWrapper">
+        <div>
+          <div className="ficheLogeTitle">
+            <h1>{ ficheLogement.title }</h1>
+            <h2>{ ficheLogement.location }</h2>
+          </div>
+          <ul className="ficheLogeTags">
+            {
+              tags.map((tag, index) => {
+                return (
+                  <li key={`${tag}-${index}`}>{ tag }</li>
+                )
+              })
+            }
+          </ul>
         </div>
-        <div className="ficheLogeHeaderAuthor">
-          <p>{ ficheLogement.host.name }</p>
-          <img src={ ficheLogement.host.picture } alt={ ficheLogement.host.name } />
+        <div className="ficheLogeInfosRight">
+          <div className="ficheLogeAuthor">
+            <p>{ ficheLogement.host.name }</p>
+            <img src={ ficheLogement.host.picture } alt={ ficheLogement.host.name } />
+          </div>
+          <Rating score={ ficheLogement.rating } />
         </div>
-      </section>
-      <section className="ficheLogeTagsRate">
-        <ul className="ficheLogeTagsList">
-          {
-            tags.map((tag, index) => {
-              return (
-                <li key={`${tag}-${index}`}>{ tag }</li>
-              )
-            })
-          }
-        </ul>
-        <Rating score={ ficheLogement.rating } />
       </section>
       <section className="ficheLogeDropdowns">
         <Dropdown title="Description" content={ ficheLogement.description } />

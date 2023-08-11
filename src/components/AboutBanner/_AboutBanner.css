@@ -7,5 +7,12 @@
   justify-content: center;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url(../../assets/images/aboutbanner.jpg);
   background-position: center;
+  background-size: cover;
   margin-bottom: 40px;
+}
+
+@media ( max-width: 600px ) {
+  .aboutBanner {
+    margin-bottom: 20px;
+  }
 }

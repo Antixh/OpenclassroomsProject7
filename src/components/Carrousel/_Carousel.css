@@ -46,3 +46,23 @@
     right: 0;
   }
 }
+
+@media ( max-width: 600px ) {
+  .carousel {
+    height: 255px;
+
+    & .carouselSlide {
+      height: 255px;
+    }
+
+    & .carouselPagination {
+      display: none;
+    }
+
+    & .arrow {
+      width: 24px;
+      height: 24px;
+      top: 120px;
+    }
+  }
+}

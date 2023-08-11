@@ -4,6 +4,7 @@
   & .dropdownTitleWrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: var(--primary-color);
     color: var(--secondary-color);
     border-radius: 10px;
@@ -14,6 +15,7 @@
     & .dropdownTitle {
       margin: 10px 15px;
       font-size: 18px;
+      font-weight: 500;
     }
 
     
@@ -61,5 +63,25 @@
   to {
     transform: translateY(-5px);
     opacity: 1;
+  }
+}
+
+@media ( max-width: 600px ) {
+  .dropdownWrapper {
+    & .dropdownTitleWrapper {
+      & .dropdownTitle {
+        font-size: 13px;
+      }
+
+      & .chevron {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    & .dropdownContent {
+      font-size: 12px;
+      padding: 20px 15px 20px;
+    }
   }
 }
