@@ -1,14 +1,29 @@
-import { useParams } from "react-router-dom";
-import logements from "../../data/logements.json";
+import React from "react";
+import { useParams,useNavigate } from "react-router-dom";
 import Carousel from "../../components/Carrousel/Carousel";
 import Rating from "../../components/Rating/Rating";
 import Dropdown from "../../components/Dropdown/Dropdown";
+import { fetchAppartment } from "../../service";
 
 function FicheLogement() {
   const idLogement = useParams();
-  const ficheLogement = logements.find((logement) => logement.id === idLogement.id);
-  const tags = ficheLogement.tags;
-  const equipments = ficheLogement.equipments.map((equip, index) => {
+  const navigate = useNavigate();
+  const [ logement, setLogement ] =  React.useState();
+
+  React.useEffect(()=>{
+    async function getApparts(){
+      const appartments = await fetchAppartment();
+      const appartment = appartments.find((appart) => appart.id === idLogement.id);
+      if(!appartment){
+        navigate("notfound");
+      }
+      setLogement(appartment)
+    }
+    getApparts();
+  },[ idLogement, navigate ]);
+
+  const tags = logement && logement.tags;
+  const equipments = logement && logement.equipments.map((equip, index) => {
     return (
       <ul key= { index } >
         <li>{ equip }</li>
@@ -16,39 +31,41 @@ function FicheLogement() {
     )
   })
 
-  return (
-    <main>
-      <Carousel slides={ ficheLogement.pictures }/>
-      <section className="ficheLogeInfosWrapper">
-        <div>
-          <div className="ficheLogeTitle">
-            <h1>{ ficheLogement.title }</h1>
-            <h2>{ ficheLogement.location }</h2>
+  if( logement ){
+    return (
+      <main>
+        <Carousel slides={ logement && logement.pictures }/>
+        <section className="ficheLogeInfosWrapper">
+          <div>
+            <div className="ficheLogeTitle">
+              <h1>{ logement && logement.title }</h1>
+              <h2>{ logement && logement.location }</h2>
+            </div>
+            <ul className="ficheLogeTags">
+              {
+                tags.map((tag, index) => {
+                  return (
+                    <li key={`${tag}-${index}`}>{ tag }</li>
+                  )
+                })
+              }
+            </ul>
           </div>
-          <ul className="ficheLogeTags">
-            {
-              tags.map((tag, index) => {
-                return (
-                  <li key={`${tag}-${index}`}>{ tag }</li>
-                )
-              })
-            }
-          </ul>
-        </div>
-        <div className="ficheLogeInfosRight">
-          <div className="ficheLogeAuthor">
-            <p>{ ficheLogement.host.name }</p>
-            <img src={ ficheLogement.host.picture } alt={ ficheLogement.host.name } />
+          <div className="ficheLogeInfosRight">
+            <div className="ficheLogeAuthor">
+              <p>{ logement.host.name }</p>
+              <img src={ logement && logement.host.picture } alt={logement && logement.host.name } />
+            </div>
+            <Rating score={ logement && logement.rating } />
           </div>
-          <Rating score={ ficheLogement.rating } />
-        </div>
-      </section>
-      <section className="ficheLogeDropdowns">
-        <Dropdown title="Description" content={ ficheLogement.description } />
-        <Dropdown title="Equipements" content={ equipments } />
-      </section>
-    </main>
-  )
+        </section>
+        <section className="ficheLogeDropdowns">
+          <Dropdown title="Description" content={logement && logement.description } />
+          <Dropdown title="Equipements" content={ equipments } />
+        </section>
+      </main>
+    )
+  }
 }
 
 export default FicheLogement;
