@@ -16,7 +16,7 @@ function Carousel( {slides} ) {
 
   return (
     <div className="carousel">
-      <img className="left arrow" onClick={ previousSlide } src={ left } alt="précédent" />
+      <img className={ slidesLength === 1 ? "none" : "left arrow"} onClick={ previousSlide } src={ left } alt="précédent" />
       {
         slides.map((slide, index) => {
           return (
@@ -31,7 +31,7 @@ function Carousel( {slides} ) {
           )
         })
       }
-      <img className="right arrow" onClick={ nextSlide } src={ right } alt="suivant" />
+      <img className={ slidesLength === 1 ? "none" : "right arrow"} onClick={ nextSlide } src={ right } alt="suivant" />
     </div>
   )
 }
