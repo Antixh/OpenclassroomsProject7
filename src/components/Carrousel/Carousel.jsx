@@ -16,22 +16,22 @@ function Carousel( {slides} ) {
 
   return (
     <div className="carousel">
-      <img className={ slidesLength === 1 ? "none" : "left arrow"} onClick={ previousSlide } src={ left } alt="précédent" />
+      <img className={ slidesLength === 1 ? "none" : "left arrow" } onClick={ previousSlide } src={ left } alt="précédent" />
       {
         slides.map((slide, index) => {
           return (
-            <div key={index} className={index === current ? "carouselActive" : "carouselInactive"}>
-            {index === current && (
-              <img className="carouselSlide" src={slide} alt="img-appartement" />
+            <div key={ index } className={ index === current ? "carouselActive" : "carouselInactive" }>
+            { index === current && (
+              <img className="carouselSlide" src={ slide } alt="img-appartement" />
             )}
             {index === current && slidesLength > 1 && (
-              <span className="carouselPagination">{current + 1}/{slidesLength}</span>
+              <span className="carouselPagination">{ current + 1}/{ slidesLength }</span>
             )}
           </div>
           )
         })
       }
-      <img className={ slidesLength === 1 ? "none" : "right arrow"} onClick={ nextSlide } src={ right } alt="suivant" />
+      <img className={ slidesLength === 1 ? "none" : "right arrow" } onClick={ nextSlide } src={ right } alt="suivant" />
     </div>
   )
 }
