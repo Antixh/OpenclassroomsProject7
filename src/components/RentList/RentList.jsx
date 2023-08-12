@@ -4,10 +4,10 @@ import { fetchAppartment } from "../../service";
 
 function RentList() {
 
-  const [logements,setLogements] =  React.useState([]);
+  const [ logements, setLogements ] = React.useState([]);
 
-  React.useEffect(()=>{
-    async function getApparts(){
+  React.useEffect(() => {
+    async function getApparts() {
       const appartments = await fetchAppartment();
       setLogements( appartments )
     }
@@ -17,7 +17,7 @@ function RentList() {
   return (
     <section className="rentList">
       {
-        logements.map((logement) => {
+        logements.map(( logement ) => {
           return (
             <Link key={ logement.id } to={`/logement/${ logement.id }`}>
               <article className="rentListCard">

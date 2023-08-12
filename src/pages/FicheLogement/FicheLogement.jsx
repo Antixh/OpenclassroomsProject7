@@ -1,9 +1,9 @@
 import React from "react";
 import { useParams,useNavigate } from "react-router-dom";
+import { fetchAppartment } from "../../service";
 import Carousel from "../../components/Carrousel/Carousel";
 import Rating from "../../components/Rating/Rating";
 import Dropdown from "../../components/Dropdown/Dropdown";
-import { fetchAppartment } from "../../service";
 
 function FicheLogement() {
   const idLogement = useParams();
@@ -13,17 +13,17 @@ function FicheLogement() {
   React.useEffect(()=>{
     async function getApparts(){
       const appartments = await fetchAppartment();
-      const appartment = appartments.find((appart) => appart.id === idLogement.id);
-      if(!appartment){
-        navigate("notfound");
+      const appartment = appartments.find(( appart ) => appart.id === idLogement.id);
+      if( !appartment ){
+        navigate( "notfound" );
       }
-      setLogement(appartment)
+      setLogement( appartment )
     }
     getApparts();
   },[ idLogement, navigate ]);
 
   const tags = logement && logement.tags;
-  const equipments = logement && logement.equipments.map((equip, index) => {
+  const equipments = logement && logement.equipments.map(( equip, index ) => {
     return (
       <ul key= { index } >
         <li>{ equip }</li>
