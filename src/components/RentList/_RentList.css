@@ -79,5 +79,6 @@
 
   .rentListCard {
     height: 255px;
+    max-width: 335px;
   }
 }
